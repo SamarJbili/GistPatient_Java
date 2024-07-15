@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="499.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.patient.gestionpatient.GestionMedicamentsController">
+    <children>
+        <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="450.0" prefWidth="488.0" spacing="10">
+            <Label text="Ajouter un médicament" />
+            <HBox prefHeight="16.0" prefWidth="288.0" spacing="10">
+                <Label prefHeight="18.0" prefWidth="57.0" text="Nom :" />
+                <TextField fx:id="nomMedicamentTextField" prefHeight="26.0" prefWidth="161.0" />
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Référence :" />
+                <TextField fx:id="refMedicamentTextField" prefHeight="26.0" prefWidth="158.0" />
+            </HBox>
+            <HBox spacing="10">
+                <Label prefHeight="18.0" prefWidth="59.0" text="Libellé :" />
+                <TextField fx:id="libelleMedicamentTextField" prefHeight="26.0" prefWidth="158.0" />
+            </HBox>
+            <HBox spacing="10">
+                <Label prefHeight="18.0" prefWidth="58.0" text="Prix :" />
+                <TextField fx:id="prixMedicamentTextField" prefHeight="26.0" prefWidth="161.0" />
+            </HBox>
+            <HBox prefHeight="31.0" prefWidth="424.0">
+                <children>
+                    <Button fx:id="ajouterMedicamentButton" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleAjouterMedicamentButton" prefHeight="26.0" prefWidth="107.0" text="Ajouter">
+                        <opaqueInsets>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </opaqueInsets>
+                    </Button>
+                    <Button fx:id="modifierMedicamentButton" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleModifierMedicamentButton" prefHeight="26.0" prefWidth="107.0" text="Modifier">
+                        <opaqueInsets>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </opaqueInsets>
+                    </Button>
+                    <Button fx:id="supprimerMedicamentButton" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleSupprimerMedicamentButton" prefHeight="26.0" prefWidth="107.0" text="Supprimer">
+                        <opaqueInsets>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </opaqueInsets>
+                    </Button>
+                    <Button fx:id="réinitailserMedicamentButton" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleResetButton" prefHeight="26.0" prefWidth="107.0" text="Réinitialiser">
+                        <opaqueInsets>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </opaqueInsets>
+                    </Button>
+                </children>
+            </HBox>
+            <Separator />
+            <Label text="Historique des médicaments" />
+            <TableView fx:id="historiqueTableView" prefHeight="197.0" prefWidth="476.0">
+                <columns>
+                    <TableColumn fx:id="nomPatientColumn" prefWidth="100" text="Nom du Patient" />
+                    <TableColumn fx:id="nomMedicamentColumn" prefWidth="100" text="Nom" />
+                    <TableColumn fx:id="refMedicamentColumn" prefWidth="100" text="Référence" />
+                    <TableColumn fx:id="libelleMedicamentColumn" prefWidth="100" text="Libellé" />
+                    <TableColumn fx:id="prixMedicamentColumn" prefWidth="100" text="Prix" />
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+</AnchorPane>

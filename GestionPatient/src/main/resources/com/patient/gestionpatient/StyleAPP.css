@@ -1,0 +1,68 @@
+.root {
+    -fx-background-color: #f4f4f4; /* Couleur de fond */
+}
+
+#mainAnchorPane {
+    -fx-padding: 20px; /* Marge intérieure */
+}
+
+#formVBox {
+    -fx-background-color: #ffffff; /* Couleur de fond */
+    -fx-border-color: #dddddd; /* Couleur de bordure */
+    -fx-border-width: 1px; /* Largeur de bordure */
+    -fx-border-radius: 5px; /* Rayon de bordure */
+    -fx-padding: 20px; /* Marge intérieure */
+    -fx-spacing: 10px; /* Espacement entre les enfants */
+}
+
+#formLabel {
+    -fx-font-size: 18px; /* Taille de la police */
+    -fx-font-weight: bold; /* Gras */
+    -fx-text-fill: #007bff; /* Couleur du texte */
+}
+
+.text-field {
+    -fx-pref-width: 200px; /* Largeur préférée */
+    -fx-background-radius: 3px; /* Rayon du fond */
+    -fx-border-radius: 3px; /* Rayon de bordure */
+}
+
+.button {
+    -fx-padding: 8px 16px; /* Remplissage */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-background-color: #007bff; /* Couleur de fond */
+    -fx-text-fill: #ffffff; /* Couleur du texte */
+    -fx-border-radius: 3px; /* Rayon de bordure */
+    -fx-cursor: hand; /* Curseur */
+    -fx-background-insets: 0; /* Pas de marge intérieure pour le fond */
+    -fx-background-radius: 3px; /* Rayon de fond */
+}
+
+.button:hover {
+    -fx-background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+#tableView {
+    -fx-table-cell-padding: 10px; /* Remplissage des cellules du tableau */
+}
+
+.table-column {
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-alignment: center; /* Alignement du contenu au centre */
+}
+
+.table-cell {
+    -fx-alignment: center; /* Alignement du contenu au centre */
+}
+
+.table-cell .button {
+    -fx-padding: 6px 12px; /* Remplissage */
+    -fx-font-size: 12px; /* Taille de la police */
+    -fx-background-color: #28a745; /* Couleur de fond */
+    -fx-text-fill: #ffffff; /* Couleur du texte */
+    -fx-border-radius: 3px; /* Rayon de bordure */
+}
+
+.table-cell .button:hover {
+    -fx-background-color: #218838; /* Couleur de fond au survol */
+}

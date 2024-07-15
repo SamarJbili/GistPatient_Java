@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.MainController">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Gestion">
+                    <items>
+                        <MenuItem text="Patients" onAction="#switchToPatientsInterface" />
+                        <MenuItem text="Médicaments" onAction="#switchToMedicamentsInterface" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <!-- Conteneur pour afficher les interfaces des patients et des médicaments -->
+    </center>
+</BorderPane>

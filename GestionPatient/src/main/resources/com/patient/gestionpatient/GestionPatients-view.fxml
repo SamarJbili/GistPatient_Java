@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="440.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.patient.gestionpatient.GestionPatientController">
+    <children>
+        <TabPane fx:id="tabPane" prefHeight="400.0" prefWidth="1012.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Gestion Patients">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="249.0" prefWidth="272.0">
+                            <children>
+                                <VBox fx:id="formVBox" alignment="CENTER_LEFT" layoutX="29.0" layoutY="7.0" prefHeight="400.0" prefWidth="270.0" spacing="10.0">
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+
+                                    <Label fx:id="formLabel" text="Formulaire Patient" />
+                                    <TextField fx:id="nomTextField" promptText="Nom" />
+                                    <TextField fx:id="prenomTextField" promptText="Prénom" />
+                                    <TextField fx:id="cinTextField" promptText="CIN" />
+                                    <TextField fx:id="telephoneTextField" promptText="Téléphone" />
+                                    <HBox spacing="10.0">
+                                        <RadioButton fx:id="femininRadioButton" text="Féminin" />
+                                        <RadioButton fx:id="masculinRadioButton" text="Masculin" />
+                                    </HBox>
+                           <HBox prefHeight="35.0" prefWidth="228.0">
+                              <children>
+                                          <Button fx:id="ajouterButton" onAction="#handleAjouterButton" prefHeight="36.0" prefWidth="99.0" text="Ajouter" />
+                                          <Button fx:id="modifierButton" onAction="#handleModifierButton" prefHeight="36.0" prefWidth="105.0" text="Modifier" />
+                              </children>
+                           </HBox>
+                           <HBox prefHeight="37.0" prefWidth="228.0">
+                              <children>
+                                          <Button fx:id="imprimerButton" prefHeight="36.0" prefWidth="101.0" text="Pdf" />
+                                          <Button fx:id="supprimerButton" onAction="#handleSupprimerButton" text="Supprimer" />
+                              </children>
+                           </HBox>
+                           <HBox prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                          <Button fx:id="resetButton" onAction="#handleResetButton" text="Réinitialiser" />
+                              </children>
+                           </HBox>
+                                </VBox>
+
+                                <TableView fx:id="tableView" layoutX="344.0" layoutY="24.0" prefHeight="324.0" prefWidth="653.0" styleClass="StyleAPP.css">
+                                    <columns>
+                                        <TableColumn fx:id="idColumn" prefWidth="60.399993896484375" text="Id" />
+                                        <TableColumn fx:id="nomColumn" prefWidth="128.39999389648438" text="Nom" />
+                                        <TableColumn fx:id="prenomColumn" prefWidth="75.0" text="Prénom" />
+                                        <TableColumn fx:id="cinColumn" prefWidth="75.0" text="CIN" />
+                                        <TableColumn fx:id="telephoneColumn" prefWidth="75.0" text="Téléphone" />
+                                        <TableColumn fx:id="sexeColumn" prefWidth="43.20001220703125" text="Sexe" />
+                                        <TableColumn fx:id="actionsColumn"  minWidth="1.5999755859375" prefWidth="138.4000244140625" text="Actions" />
+                                    </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+                <Tab text="Gestion Médicaments">
+                    <content>
+                        <AnchorPane prefHeight="387.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+                            <VBox alignment="CENTER" layoutX="14.0" layoutY="53.0" prefHeight="236.0" prefWidth="383.0" spacing="10">
+                                <HBox prefHeight="16.0" prefWidth="288.0" spacing="10">
+                                    <Label prefHeight="18.0" prefWidth="57.0" text="Nom :" />
+                                    <TextField fx:id="nomMedicamentTextField" prefHeight="26.0" prefWidth="161.0" />
+                                     <Button fx:id="ajouterMedicamentButton" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleAjouterMedicamentButton" prefHeight="26.0" prefWidth="107.0" text="Ajouter">
+                                         <opaqueInsets>
+                                             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                         </opaqueInsets>
+                                     </Button>
+                                </HBox>
+                                <HBox spacing="10">
+                                    <Label text="Référence :" />
+                                    <TextField fx:id="refMedicamentTextField" prefHeight="26.0" prefWidth="158.0" />
+                                     <Button fx:id="modifierMedicamentButton" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleModifierMedicamentButton" prefHeight="26.0" prefWidth="107.0" text="Modifier">
+                                         <opaqueInsets>
+                                             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                         </opaqueInsets>
+                                     </Button>
+                                </HBox>
+                                <HBox spacing="10">
+                                    <Label prefHeight="18.0" prefWidth="59.0" text="Libellé :" />
+                                    <TextField fx:id="libelleMedicamentTextField" prefHeight="26.0" prefWidth="158.0" />
+                                     <Button fx:id="supprimerMedicamentButton" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleSupprimerMedicamentButton" prefHeight="26.0" prefWidth="107.0" text="Supprimer">
+                                         <opaqueInsets>
+                                             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                         </opaqueInsets>
+                                     </Button>
+                                </HBox>
+                                <HBox spacing="10">
+                                    <Label prefHeight="18.0" prefWidth="58.0" text="Prix :" />
+                                    <TextField fx:id="prixMedicamentTextField" prefHeight="26.0" prefWidth="161.0" />
+                                     <Button fx:id="réinitailserMedicamentButton" nodeOrientation="RIGHT_TO_LEFT" onAction="#handleResetButton" prefHeight="26.0" prefWidth="107.0" text="Réinitialiser">
+                                         <opaqueInsets>
+                                             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                         </opaqueInsets>
+                                     </Button>
+                                </HBox>
+                                <HBox prefHeight="29.0" prefWidth="488.0" />
+                            </VBox>
+                             <TableView fx:id="historiqueTableView" layoutX="415.0" layoutY="19.0" prefHeight="304.0" prefWidth="498.0">
+                                 <columns>
+                                     <TableColumn fx:id="nomMedicamentColumn" prefWidth="100" text="Nom" />
+                                     <TableColumn fx:id="refMedicamentColumn" prefWidth="100" text="Référence" />
+                                     <TableColumn fx:id="libelleMedicamentColumn" prefWidth="100" text="Libellé" />
+                                     <TableColumn fx:id="prixMedicamentColumn" prefWidth="100" text="Prix" />
+                                 </columns>
+                             </TableView>
+
+                             <Label layoutX="479.0" layoutY="14.0" />
+                             <Label layoutX="130.0" layoutY="23.0" text="Formulaire Médicaments" />
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+    </children>
+              <stylesheets>
+                  <URL value="@StyleAPP.css" />
+              </stylesheets>
+</AnchorPane>
